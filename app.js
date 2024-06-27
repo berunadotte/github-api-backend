@@ -2,9 +2,13 @@ const express = require('express')
 const mongoose = require('./config/database')
 const Repository = require('./models/repository')
 const { startSync, forceSync } = require('./services/syncService')
+const cors = require('cors');
+
 
 const app = express()
 const port = 3000
+
+app.use(cors());
 
 app.get('/repositories', async (req, res) => {
   const repositories = await Repository.find()
