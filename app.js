@@ -3,8 +3,6 @@ const mongoose = require('./config/database')
 const Repository = require('./models/repository')
 const { startSync, forceSync } = require('./services/syncService')
 const cors = require('cors');
-
-
 const app = express()
 const port = 3000
 
